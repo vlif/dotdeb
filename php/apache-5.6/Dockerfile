@@ -18,6 +18,10 @@ RUN mv /etc/apache2/apache2.conf /etc/apache2/apache2.conf.dist \
 COPY apache2.conf /etc/apache2/apache2.conf
 COPY envvars /etc/apache2/envvars
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+RUN ln -s /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-enabled/000-default.conf
+# enable rewrite module by default
+RUN ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load
+
 COPY apache2-foreground /usr/local/bin/
 
 EXPOSE 80
