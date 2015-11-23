@@ -1,4 +1,4 @@
-FROM valerydubrava/dotdeb:php-5.6
+FROM ddgcorp/dotdeb-php:5.6
 
 MAINTAINER Valeriy Dubrava <vd@ddgcorp.ru>
 
