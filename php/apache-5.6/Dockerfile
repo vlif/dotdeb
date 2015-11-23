@@ -10,9 +10,14 @@ RUN echo "Install Apache" \
 	&& echo "Cleanup" \
 	&& apt-get -y clean
 
-#RUN mv /etc/apache2/apache2.conf /etc/apache2/apache2.conf.dist && rm /etc/apache2/conf-enabled/* /etc/apache2/sites-enabled/*
+RUN mv /etc/apache2/apache2.conf /etc/apache2/apache2.conf.dist \
+	&& mv /etc/apache2/envvars /etc/apache2/envvars.dist \
+	&& mv /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/000-default.conf.dist \
+	&& rm /etc/apache2/conf-enabled/* /etc/apache2/sites-enabled/*
 
-#COPY apache2.conf /etc/apache2/apache2.conf
+COPY apache2.conf /etc/apache2/apache2.conf
+COPY envvars /etc/apache2/envvars
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY apache2-foreground /usr/local/bin/
 
 EXPOSE 80

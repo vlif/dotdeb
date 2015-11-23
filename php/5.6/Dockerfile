@@ -4,7 +4,7 @@ MAINTAINER Valeriy Dubrava <vd@ddgcorp.ru>
 
 ADD https://www.dotdeb.org/dotdeb.gpg /tmp/dotdeb.gpg
 
-ARG TZ=Etc/UTC
+ENV TZ=Etc/UTC
 
 RUN echo "Install DotDeb" \
 	&& echo "deb http://packages.dotdeb.org jessie all" > /etc/apt/sources.list.d/dotdeb.list \
@@ -23,4 +23,4 @@ RUN echo "Install DotDeb" \
 	&& echo "Cleanup" \
 	&& apt-get -y clean
 
-CMD ["/bin/bash"]
+CMD ["/usr/bin/php"]
