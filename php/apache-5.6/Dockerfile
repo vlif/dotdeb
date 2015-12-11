@@ -8,7 +8,7 @@ RUN echo "Install Apache" \
 	&& echo "Configure PHP" \
 	&& echo "date.timezone=${TZ}" >> /etc/php5/apache2/php.ini \ 
 	&& echo "Cleanup" \
-	&& apt-get -y clean
+	&& apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false
 
 RUN mv /etc/apache2/apache2.conf /etc/apache2/apache2.conf.dist \
 	&& mv /etc/apache2/envvars /etc/apache2/envvars.dist \

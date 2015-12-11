@@ -21,6 +21,6 @@ RUN echo "Install DotDeb" \
 	&& echo "Composer" \
 	&& curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer \
 	&& echo "Cleanup" \
-	&& apt-get -y clean
+	&& apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false
 
 CMD ["/usr/bin/php"]
