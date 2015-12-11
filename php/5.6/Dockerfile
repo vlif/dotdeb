@@ -19,7 +19,7 @@ RUN echo "Install DotDeb" \
 	&& echo "Configure PHP" \
 	&& echo "date.timezone=${TZ}" >> /etc/php5/cli/php.ini && echo "date.timezone=${TZ}" >> /etc/php5/fpm/php.ini \
 	&& echo "Composer" \
-	&& curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer \
+	&& curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/bin/composer \
 	&& echo "Cleanup" \
 	&& apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false
 
