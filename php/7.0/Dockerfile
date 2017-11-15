@@ -17,7 +17,7 @@ RUN echo "Install DotDeb" \
 	&& echo "Install PHP" \
 	&& apt-get -y install php7.0 php7.0-cli php7.0-fpm php7.0-readline php7.0-redis php7.0-curl php7.0-gd php7.0-imagick php7.0-intl php7.0-mcrypt php7.0-memcache php7.0-mysql php7.0-pgsql php7.0-memcached \
 	&& echo "Configure PHP" \
-	&& echo "date.timezone=${TZ}" >> /etc/php7.0/cli/php.ini && echo "date.timezone=${TZ}" >> /etc/php7.0/fpm/php.ini \
+	&& echo "date.timezone=${TZ}" >> /etc/php/7.0/cli/php.ini && echo "date.timezone=${TZ}" >> /etc/php/7.0/fpm/php.ini \
 	&& echo "Composer" \
 	&& curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/bin/composer \
 	&& echo "Cleanup" \
