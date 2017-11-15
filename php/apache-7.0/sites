@@ -1,0 +1,2 @@
+cat: /etc/apache2/sites-available/default: No such file or directory
+cat: /etc/apache2/sites-available/default-ssl: No such file or directory
