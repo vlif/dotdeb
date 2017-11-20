@@ -15,7 +15,7 @@ RUN echo "Install DotDeb" \
 	&& echo "Common" \
 	&& apt-get -y install apt-utils curl git \
 	&& echo "Install PHP" \
-	&& apt-get -y install php5 php5-cli php5-fpm php5-readline php5-redis php5-curl php5-gd php5-imagick php5-intl php5-mcrypt php5-memcache php5-mysql php5-pgsql php5-memcached \
+	&& apt-get -y install php5 php5-cli php5-fpm php5-readline php5-redis php5-curl php5-gd php5-imagick php5-intl php5-mcrypt php5-memcache php5-mysql php5-pgsql php5-memcached php5-mssql \
 	&& echo "Configure PHP" \
 	&& echo "date.timezone=${TZ}" >> /etc/php5/cli/php.ini && echo "date.timezone=${TZ}" >> /etc/php5/fpm/php.ini \
 	&& echo "Composer" \
